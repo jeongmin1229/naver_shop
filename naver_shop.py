@@ -24,18 +24,19 @@ def search():
     
     try:
         browser.find_element_by_class_name('filter_label_hit__31QIX').click()
+        
+        
     except:
        pass
-
-
+    browser.find_element_by_class_name('subFilter_sort_box__1r06j > a:nth-child(6)').click()
     WebDriverWait(browser, 2).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, 'div[class ^= basicList_info_area__]')))
 
 
-    while page < 8:
+    while page < 2:
         # 스크롤
-        for i in range(13):
-            browser.execute_script('window.scrollBy(0, window.innerHeight)')
-            time.sleep(1)
+        # for i in range(13):
+        #     browser.execute_script('window.scrollBy(0, window.innerHeight)')
+        #     time.sleep(1)
 
         items = browser.find_elements_by_css_selector('li[class ^= basicList_item__2XT81]')
 
@@ -122,4 +123,4 @@ def review():
     time.sleep(100)
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
-review()
+search()
